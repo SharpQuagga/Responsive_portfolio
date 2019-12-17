@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+// import '../../../../../../../flutter/packages/flutter/lib/cupertino.dart';
 import 'responsive_widget.dart';
 import 'dart:html' as html;
-import 'domino_reveal.dart';
+// import 'domino_reveal.dart';
 import 'extensions/hover_extensions.dart';
-// import 'extensions/translate_on_hover.dart';
+import 'smallScreen/importts.dart';
 
 class ProfilePage extends StatelessWidget {
   //const ProfilePage({Key key}) : super(key: key);
@@ -127,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                           color: Colors.orange[300],
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
-                            image: AssetImage("images/qqq.png"),
+                            image: AssetImage("assets/images/qqq.png"),
                             fit: BoxFit.contain,
                           ),
                           borderRadius: BorderRadius.only(
@@ -142,7 +143,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
-        smallScreen: _firstPageIntro(),
+        // smallScreen: _firstPageIntro(),
         mediumScreen: Row(children: <Widget>[
           _firstPageIntro(),
           Spacer(flex: 1,),
@@ -152,7 +153,7 @@ class ProfilePage extends StatelessWidget {
               decoration: BoxDecoration(
                 //backgroundBlendMode: BlendMode.darken,
                 image: DecorationImage(
-                    image: AssetImage("images/qqq.png"),
+                    image: AssetImage("assets/images/qqq.png"),
                     fit: BoxFit.contain,
                     repeat: ImageRepeat.noRepeat),
                 shape: BoxShape.circle,
@@ -515,7 +516,7 @@ class _firstPageIntro extends StatelessWidget {
                         "https://www.facebook.com/Darsbir.Singh", "Facebook");
                   },
                   child: Image(
-                    image: AssetImage("images/facebook.png"),
+                    image: AssetImage("assets/images/facebook.png"),
                     width: 25,
                   )).showCursorOnHover,
               SizedBox(
@@ -528,7 +529,7 @@ class _firstPageIntro extends StatelessWidget {
                         "LinkedIn");
                   },
                   child: Image(
-                    image: AssetImage("images/instagram.png"),
+                    image: AssetImage("assets/images/instagram.png"),
                     width: 25,
                   )).showCursorOnHover,
               SizedBox(
@@ -541,7 +542,7 @@ class _firstPageIntro extends StatelessWidget {
                         "LinkedIn");
                   },
                   child: Image(
-                      image: AssetImage("images/linkedin.png"), width: 25)).showCursorOnHover,
+                      image: AssetImage("assets/images/linkedin.png"), width: 25)).showCursorOnHover,
             ],
           ),
         ),
@@ -672,7 +673,7 @@ AnimatedContainer _secondPage(BuildContext context) {
                   border: Border.all(),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage("images/qq.png"),
+                    image: AssetImage("assets/images/qq.png"),
                   ),
                 ),
               ),
@@ -763,170 +764,156 @@ AnimatedContainer _secondPage(BuildContext context) {
 
 AnimatedContainer _thirdPage(BuildContext context) {
   return AnimatedContainer(
-    duration: Duration(seconds: 1),
-    padding: EdgeInsets.only(
-        //top: MediaQuery.of(context).size.height * 0.05,
-        //bottom: MediaQuery.of(context).size.height * 0.1,
-        ),
-    child: ResponsiveWidget(
-      largeScreen: AnimatedContainer(
-        duration: Duration(seconds: 1),
-        height: 1.25 * MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 4,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    DominoReveal(
-                      child: Text(
-                        "Services",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              //height: 1.15 * MediaQuery.of(context).size.height,
-              child: DominoReveal(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    _dabbeMainDabba(
-                        context,
-                        "Android Development",
-                        "Android software development is the process by which new applications are created for devices running the Android operating system.",
-                        1,
-                        "images/android.png"),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    _dabbeMainDabba(
-                        context,
-                        "Flutter Development",
-                        "Flutter is an open-source mobile application development framework created by Google to develop applications for Android and iOS.",
-                        1,
-                        "Flutter"),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            DominoReveal(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  _dabbeMainDabba(
-                      context,
-                      "Web Development",
-                      "Web development is the work involved in developing a web site for the Internet or an intranet.",
-                      1,
-                      "Flutter"),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  _dabbeMainDabba(
-                      context,
-                      "Data Science",
-                      "Data science is a field that uses scientific processes, algorithms and systems to extract knowledge and insights from data.",
-                      1,
-                      "images/python.png"),
-                ],
-              ),
-            )
-          ],
-        ),
+  duration: Duration(seconds: 1),
+  padding: EdgeInsets.only(
+      //top: MediaQuery.of(context).size.height * 0.05,
+      //bottom: MediaQuery.of(context).size.height * 0.1,
       ),
-      smallScreen: Container(
-        margin: EdgeInsets.only(top: 20),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            DominoReveal(
-              child: Text(
-                "Services",
-                style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                reverse: true,
-                child: DominoReveal(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      _dabbeMainDabba(
-                          context,
-                          "Android Development",
-                          "Android software development is the process by which new applications are created for devices running the Android operating system.",
-                          0,
-                          "images/android.png"),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                      ),
-                      _dabbeMainDabba(
-                          context,
-                          "Flutter Development",
-                          "Flutter is an open-source mobile application development framework created by Google to develop applications for Android and iOS.",
-                          0,
-                          "Flutter"),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                      ),
-                      _dabbeMainDabba(
-                          context,
-                          "Web Development",
-                          "Web development is the work involved in developing a web site for the Internet or an intranet.",
-                          0,
-                          "Flutter"),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
-                      ),
-                      _dabbeMainDabba(
-                          context,
-                          "Data Science",
-                          "Data science is a field that uses scientific processes, algorithms and systems to extract knowledge and insights from data.",
-                          0,
-                          "images/python.png"),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+  child: ResponsiveWidget(
+    largeScreen: AnimatedContainer(
+      duration: Duration(seconds: 1),
+      height: 1.25 * MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child:  Container(
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(top: 20),
+            // height: MediaQuery.of(context).size.height,
+            // width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                DominoReveal(
+        child: Text(
+          "Services Offered",
+          style: TextStyle(
+              fontSize: 30,
+              // color: Colors.black,
+              fontFamily: "MeriendaOne",
+              fontWeight: FontWeight.bold),
         ),
+                ),
+                Container(
+        width:  MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical:  MediaQuery.of(context).size.width*0.02, horizontal:  MediaQuery.of(context).size.width*0.002),
+        // margin: EdgeInsets.symmetric(horizontal: 10),
+        color: Colors.transparent,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          reverse: true,
+          child: DominoReveal(
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              spacing: 10,
+              children: <Widget>[
+                _dabbeMainDabba(
+                    context,
+                    "Android Development",
+                    "Android software development is the process by which new applications are created for devices running the Android operating system.",
+                    0,
+                    "assets/images/android.png"),
+                _dabbeMainDabba(
+                    context,
+                    "Flutter Development",
+                    "Flutter is an open-source mobile application development framework created by Google to develop applications for Android and iOS.",
+                    0,
+                    "Flutter"),
+                _dabbeMainDabba(
+                    context,
+                    "Web Development",
+                    "Web development is the work involved in developing a web site for the Internet or an intranet.",
+                    0,
+                    "Flutter"),
+                _dabbeMainDabba(
+                    context,
+                    "Data Science",
+                    "Data science is a field that uses scientific processes, algorithms and systems to extract knowledge and insights from data.",
+                    0,
+                    "assets/images/python.png"),
+              ],
+            ),
+          ),
+        ),
+                ),
+              ],
+            ),
       ),
     ),
-  );
+    // smallScreen: Container(
+    //   margin: EdgeInsets.only(top: 20),
+    //   height: MediaQuery.of(context).size.height,
+    //   width: MediaQuery.of(context).size.width,
+    //   child: Column(
+    //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //     mainAxisSize: MainAxisSize.max,
+    //     crossAxisAlignment: CrossAxisAlignment.center,
+    //     children: <Widget>[
+    //       DominoReveal(
+    //         child: Text(
+    //           "Services",
+    //           style: TextStyle(
+    //               fontSize: 30,
+    //               color: Colors.black,
+    //               fontWeight: FontWeight.bold),
+    //         ),
+    //       ),
+    //       Container(
+    //         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    //         margin: EdgeInsets.symmetric(horizontal: 10),
+    //         child: SingleChildScrollView(
+    //           scrollDirection: Axis.horizontal,
+    //           reverse: true,
+    //           child: DominoReveal(
+    //             child: Row(
+    //               crossAxisAlignment: CrossAxisAlignment.center,
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               mainAxisSize: MainAxisSize.max,
+    //               children: <Widget>[
+    //                 _dabbeMainDabba(
+    //                     context,
+    //                     "Android Development",
+    //                     "Android software development is the process by which new applications are created for devices running the Android operating system.",
+    //                     0,
+    //                     "assets/images/android.png"),
+    //                 Padding(
+    //                   padding: EdgeInsets.symmetric(horizontal: 8),
+    //                 ),
+    //                 _dabbeMainDabba(
+    //                     context,
+    //                     "Flutter Development",
+    //                     "Flutter is an open-source mobile application development framework created by Google to develop applications for Android and iOS.",
+    //                     0,
+    //                     "Flutter"),
+    //                 Padding(
+    //                   padding: EdgeInsets.symmetric(horizontal: 8),
+    //                 ),
+    //                 _dabbeMainDabba(
+    //                     context,
+    //                     "Web Development",
+    //                     "Web development is the work involved in developing a web site for the Internet or an intranet.",
+    //                     0,
+    //                     "Flutter"),
+    //                 Padding(
+    //                   padding: EdgeInsets.symmetric(horizontal: 8),
+    //                 ),
+    //                 _dabbeMainDabba(
+    //                     context,
+    //                     "Data Science",
+    //                     "Data science is a field that uses scientific processes, algorithms and systems to extract knowledge and insights from data.",
+    //                     0,
+    //                     "assets/images/python.png"),
+    //               ],
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    // ),
+  ),
+    );
 }
 
 // RichText _serv(String head, String desc) {
@@ -957,220 +944,227 @@ class __ForthState extends State<_Forth> {
   );
 
   @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-        duration: Duration(seconds: 1),
-        padding: EdgeInsets.only(
-          top: MediaQuery.of(context).size.height * 0.1,
-          // bottom: MediaQuery.of(context).size.height * 0.1,
-        ),
-        child: ResponsiveWidget(
-            largeScreen: AnimatedContainer(
-              duration: Duration(seconds: 1),
-              // height: 1.25 * MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 40.0),
-                    child: DominoReveal(
-                      child: Text(
-                        "My Projects",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  DominoReveal(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () {
-                            _projectcurrentPage -= 1;
-                            _projectcontroller.animateToPage(
-                              _projectcurrentPage,
-                              duration: Duration(seconds: 1),
-                              curve: Curves.easeIn,
-                            );
-                          },
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            // alignment: Alignment(
-                            //     MediaQuery.of(context).size.height / 2 - 20,
-                            //     MediaQuery.of(context).size.width / 2),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Icon(Icons.arrow_left),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width * 0.03,
-                              right: MediaQuery.of(context).size.width * 0.03),
-                          padding: EdgeInsets.only(
-                            top: 50,
-                          ),
-                          width: MediaQuery.of(context).size.width / 1.5,
-                          height: MediaQuery.of(context).size.height / 1.6,
-                          alignment: Alignment.center,
-                          child: DominoReveal(
-                            child: PageView(
-                              controller: _projectcontroller,
-                              children: <Widget>[
-                                if (!ResponsiveWidget.isSmallScreen(context))
-                                  ProjectDecs(
-                                    img1: "project/11.png",
-                                    img2: "project/22.png",
-                                    img3: "project/33.png",
-                                    txt1: "Palace",
-                                    txt2: "Hunt",
-                                  ),
-                                ProjectDecs(
-                                  img1: "project/pho.png",
-                                  img2: "project/pm.png",
-                                  img3: "project/pp.png",
-                                  txt1: "Punjabi",
-                                  txt2: "Ekta",
-                                ),
-                          ProjectDecs(
-                                  img1: "project/bz1.png",
-                                  img2: "project/bz2.png",
-                                  img3: "project/bz3.png",
-                                  txt1: "Bizz",
-                                  txt2: "Code",
-                                ),
-                                ProjectDecs(
-                                  img1: "project/ea.jpeg",
-                                  img2: "project/eaa.jpeg",
-                                  img3: "project/33.png",
-                                  txt1: "Estate",
-                                  txt2: "App",
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-         GestureDetector(
-                          onTap: () {
-                            print("Tapp");
-                            _projectcurrentPage += 1;
-                            _projectcontroller.animateToPage(
-                              _projectcurrentPage,
-                              duration: Duration(seconds: 1),
-                              curve: Curves.easeIn,
-                            );
-                          },
-            child: Container(
-                            height: 50,
-                            width: 50,
-                            // alignment: Alignment(
-                            //     MediaQuery.of(context).size.height / 2 - 20,
-                            //     MediaQuery.of(context).size.width / 2),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Icon(Icons.arrow_right),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            smallScreen: AnimatedContainer(
-              duration: Duration(seconds: 1),
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 40.0),
-                      child: RichText(
-                        text: TextSpan(
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            text: "My Projects"),
-                      ),
-                    ),
-                    Container(
-                      color: Colors.transparent,
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      padding: EdgeInsets.only(
-                        top: 50,
-                      ),
-                      width: MediaQuery.of(context).size.width / 0.5,
-                      height: MediaQuery.of(context).size.height / 1.6,
-                      alignment: Alignment.center,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                        child: DominoReveal(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              _smallProjectDocs(
-                                img1: "project/11.png",
-                                txt1: "Palace",
-                                txt2: "Hunt",
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              _smallProjectDocs(
-                                img1: "project/pho.png",
-                                txt1: "Punjabi",
-                                txt2: "Ekta",
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              _smallProjectDocs(
-                                img1: "project/bz1.png",
-                                txt1: "Bizz",
-                                txt2: "Code",
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              _smallProjectDocs(
-                                img1: "project/ea.jpeg",
-                                txt1: "Estate",
-                                txt2: "App",
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  ]),
-            )));
+  Widget build(BuildContext context){
+    return Prrjects();
   }
+
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return AnimatedContainer(
+  //       duration: Duration(seconds: 1),
+  //       padding: EdgeInsets.only(
+  //         top: MediaQuery.of(context).size.height * 0.1,
+  //         // bottom: MediaQuery.of(context).size.height * 0.1,
+  //       ),
+  //       child: ResponsiveWidget(
+  //           largeScreen: AnimatedContainer(
+  //             duration: Duration(seconds: 1),
+  //             // height: 1.25 * MediaQuery.of(context).size.height,
+  //             width: MediaQuery.of(context).size.width,
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.start,
+  //               mainAxisSize: MainAxisSize.min,
+  //               crossAxisAlignment: CrossAxisAlignment.center,
+  //               children: <Widget>[
+  //                 Padding(
+  //                   padding: const EdgeInsets.only(bottom: 40.0),
+  //                   child: DominoReveal(
+  //                     child: Text(
+  //                       "My Projects",
+  //                       style: TextStyle(
+  //                         color: Colors.black,
+  //                         fontSize: 30,
+  //                         fontWeight: FontWeight.bold,
+  //                       ),
+  //                     ),
+  //                   ),
+  //                 ),
+  //                 DominoReveal(
+  //                   child: Row(
+  //                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //                     crossAxisAlignment: CrossAxisAlignment.center,
+  //                     mainAxisSize: MainAxisSize.min,
+  //                     children: <Widget>[
+  //                       GestureDetector(
+  //                         onTap: () {
+  //                           _projectcurrentPage -= 1;
+  //                           _projectcontroller.animateToPage(
+  //                             _projectcurrentPage,
+  //                             duration: Duration(seconds: 1),
+  //                             curve: Curves.easeIn,
+  //                           );
+  //                         },
+  //                         child: Container(
+  //                           height: 50,
+  //                           width: 50,
+  //                           // alignment: Alignment(
+  //                           //     MediaQuery.of(context).size.height / 2 - 20,
+  //                           //     MediaQuery.of(context).size.width / 2),
+  //                           decoration: BoxDecoration(
+  //                             color: Colors.orange,
+  //                             shape: BoxShape.circle,
+  //                           ),
+  //                           child: Center(
+  //                             child: Icon(Icons.arrow_left),
+  //                           ),
+  //                         ),
+  //                       ),
+  //                       Container(
+  //                         margin: EdgeInsets.only(
+  //                             left: MediaQuery.of(context).size.width * 0.03,
+  //                             right: MediaQuery.of(context).size.width * 0.03),
+  //                         padding: EdgeInsets.only(
+  //                           top: 50,
+  //                         ),
+  //                         width: MediaQuery.of(context).size.width / 1.5,
+  //                         height: MediaQuery.of(context).size.height / 1.6,
+  //                         alignment: Alignment.center,
+  //                         child: DominoReveal(
+  //                           child: PageView(
+  //                             controller: _projectcontroller,
+  //                             children: <Widget>[
+  //                               if (!ResponsiveWidget.isSmallScreen(context))
+  //                                 ProjectDecs(
+  //                                   img1: "assets/project/11.png",
+  //                                   img2: "assets/project/22.png",
+  //                                   img3: "assets/project/33.png",
+  //                                   txt1: "Palace",
+  //                                   txt2: "Hunt",
+  //                                 ),
+  //                               ProjectDecs(
+  //                                 img1: "assets/project/pho.png",
+  //                                 img2: "assets/project/pm.png",
+  //                                 img3: "assets/project/pp.png",
+  //                                 txt1: "Punjabi",
+  //                                 txt2: "Ekta",
+  //                               ),
+  //                         ProjectDecs(
+  //                                 img1: "assets/project/bz1.png",
+  //                                 img2: "assets/project/bz2.png",
+  //                                 img3: "assets/project/bz3.png",
+  //                                 txt1: "Bizz",
+  //                                 txt2: "Code",
+  //                               ),
+  //                               ProjectDecs(
+  //                                 img1: "assets/project/ea.jpeg",
+  //                                 img2: "assets/project/eaa.jpeg",
+  //                                 img3: "assets/project/33.png",
+  //                                 txt1: "Estate",
+  //                                 txt2: "App",
+  //                               ),
+  //                             ],
+  //                           ),
+  //                         ),
+  //                       ),
+  //        GestureDetector(
+  //                         onTap: () {
+  //                           print("Tapp");
+  //                           _projectcurrentPage += 1;
+  //                           _projectcontroller.animateToPage(
+  //                             _projectcurrentPage,
+  //                             duration: Duration(seconds: 1),
+  //                             curve: Curves.easeIn,
+  //                           );
+  //                         },
+  //           child: Container(
+  //                           height: 50,
+  //                           width: 50,
+  //                           // alignment: Alignment(
+  //                           //     MediaQuery.of(context).size.height / 2 - 20,
+  //                           //     MediaQuery.of(context).size.width / 2),
+  //                           decoration: BoxDecoration(
+  //                             color: Colors.orange,
+  //                             shape: BoxShape.circle,
+  //                           ),
+  //                           child: Center(
+  //                             child: Icon(Icons.arrow_right),
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     ],
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //           // smallScreen: AnimatedContainer(
+  //           //   duration: Duration(seconds: 1),
+  //           //   width: MediaQuery.of(context).size.width,
+  //           //   child: Column(
+  //           //       mainAxisAlignment: MainAxisAlignment.start,
+  //           //       mainAxisSize: MainAxisSize.max,
+  //           //       crossAxisAlignment: CrossAxisAlignment.center,
+  //           //       children: <Widget>[
+  //           //         Padding(
+  //           //           padding: const EdgeInsets.only(bottom: 40.0),
+  //           //           child: RichText(
+  //           //             text: TextSpan(
+  //           //                 style: TextStyle(
+  //           //                   color: Colors.black,
+  //           //                   fontSize: 30,
+  //           //                   fontWeight: FontWeight.bold,
+  //           //                 ),
+  //           //                 text: "My Projects"),
+  //           //           ),
+  //           //         ),
+  //           //         Container(
+  //           //           color: Colors.transparent,
+  //           //           margin: EdgeInsets.only(left: 10, right: 10),
+  //           //           padding: EdgeInsets.only(
+  //           //             top: 50,
+  //           //           ),
+  //           //           width: MediaQuery.of(context).size.width / 0.5,
+  //           //           height: MediaQuery.of(context).size.height / 1.6,
+  //           //           alignment: Alignment.center,
+  //           //           child: SingleChildScrollView(
+  //           //             scrollDirection: Axis.horizontal,
+  //           //             padding:
+  //           //                 EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+  //           //             child: DominoReveal(
+  //           //               child: Row(
+  //           //                 mainAxisAlignment: MainAxisAlignment.center,
+  //           //                 crossAxisAlignment: CrossAxisAlignment.center,
+  //           //                 mainAxisSize: MainAxisSize.max,
+  //           //                 children: <Widget>[
+  //           //                   _smallProjectDocs(
+  //           //                     img1: "assets/project/11.png",
+  //           //                     txt1: "Palace",
+  //           //                     txt2: "Hunt",
+  //           //                   ),
+  //           //                   SizedBox(
+  //           //                     width: 20,
+  //           //                   ),
+  //           //                   _smallProjectDocs(
+  //           //                     img1: "assets/project/pho.png",
+  //           //                     txt1: "Punjabi",
+  //           //                     txt2: "Ekta",
+  //           //                   ),
+  //           //                   SizedBox(
+  //           //                     width: 20,
+  //           //                   ),
+  //           //                   _smallProjectDocs(
+  //           //                     img1: "assets/project/bz1.png",
+  //           //                     txt1: "Bizz",
+  //           //                     txt2: "Code",
+  //           //                   ),
+  //           //                   SizedBox(
+  //           //                     width: 20,
+  //           //                   ),
+  //           //                   _smallProjectDocs(
+  //           //                     img1: "assets/project/ea.jpeg",
+  //           //                     txt1: "Estate",
+  //           //                     txt2: "App",
+  //           //                   ),
+  //           //                 ],
+  //           //               ),
+  //           //             ),
+  //           //           ),
+  //           //         )
+  //           //       ]),
+  //           // )
+  //           ));
+  // }
 }
 
 class _smallProjectDocs extends StatelessWidget {
@@ -1245,19 +1239,17 @@ class _smallProjectDocs extends StatelessWidget {
 
 Container _dabbeMainDabba(
     BuildContext context, String head, String bdy, int _size, String img) {
+      var wid = MediaQuery.of(context).size.width;
   return Container(
     padding: EdgeInsets.all(10),
-    margin:
-        _size == 0 ? EdgeInsets.symmetric(vertical: 15, horizontal: 8) : null,
-    width: _size == 1
-        ? MediaQuery.of(context).size.width / 4
-        : MediaQuery.of(context).size.height / 2.8,
-    height: _size == 1
-        ? MediaQuery.of(context).size.height / 3.3
-        : MediaQuery.of(context).size.height / 2.8,
+    margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+    // width: MediaQuery.of(context).size.width / 1.5,
+    // height: MediaQuery.of(context).size.height / 2.5,
+    width: 330,
+    height: 200,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
-        color: Colors.orange[400],
+        color: Colors.blueGrey[100],
         boxShadow: [
           BoxShadow(
               color: Colors.brown, offset: Offset(10, 10), blurRadius: 10.0)
@@ -1266,66 +1258,72 @@ Container _dabbeMainDabba(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          width: _size == 1 ? 50 : 40,
-          height: _size == 1 ? 50 : 40,
-          alignment: Alignment.topLeft,
-          padding: EdgeInsets.all(5),
-          child: Center(
-            child: img == "Flutter"
-                ? FlutterLogo(
-                    // colors: Colors.orange,
-                    size: _size == 1 ? 30 : 18,
-                  )
-                : Image(
-                    image: AssetImage(img),
-                    colorBlendMode: BlendMode.colorBurn,
-                    fit: BoxFit.contain,
-                    alignment: Alignment.center,
-                    width: _size == 1 ? 30 : 18,
-                    height: _size == 1 ? 30 : 18,
-                  ),
-            // child: Icon(
-            //   Icons.android,
-            //   color: Colors.orange,
-            //   size: _size == 1 ? 30 : 18,
-            // ),
-          ),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
-          ),
+        width:  50,
+        height: 50,
+        alignment: Alignment.topLeft,
+        padding: EdgeInsets.all(5),
+        child: Center(
+          child: img == "Flutter"
+              ? FlutterLogo(
+                  // colors: Colors.orange,
+                  size: 30,
+                )
+              : Image(
+                  image: AssetImage(img),
+                  colorBlendMode: BlendMode.colorBurn,
+                  fit: BoxFit.contain,
+                  alignment: Alignment.center,
+                  width:  30,
+                  height: 30,
+                ),
         ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
+        ),
+          ),
         SizedBox(
           height: 20,
         ),
-        Text(
-          head,
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: _size == 1 ? 22 : 18,
-              fontWeight: FontWeight.bold),
-        ),
-        // if(_size==1)
-        Padding(
-          padding: EdgeInsets.only(top: 10, right: 10),
-          child: Container(
+        Flexible(
+            flex: 1,
+            fit: FlexFit.tight,
             child: Text(
-              bdy,
-              maxLines: 5,
-              style: TextStyle(
-                  fontSize: _size == 1 ? 16 : 15,
-                  color: Colors.white,
-                  fontFamily: "Blinker-Regular"),
-              softWrap: true,
-              overflow: TextOverflow.fade,
-            ),
+            head,
+            softWrap: true,
+            overflow: TextOverflow.fade,
+            style: TextStyle(
+                // color: Colors.white,
+                fontFamily: "MeriendaOne",
+                // fontSize: wid * 0.04,
+                fontWeight: FontWeight.bold),
           ),
         ),
+        SizedBox(
+          height: 5,
+        ),
+       Flexible(
+         flex: 2,
+         fit: FlexFit.tight,
+            child: SingleChildScrollView(
+                          child: Text(
+                bdy,
+                softWrap: true,
+                overflow: TextOverflow.fade,
+                // maxLines: 5,
+                style: TextStyle(
+                  fontFamily: "MeriendaOne",
+                    // fontSize: wid*0.03,
+                    // color: Colors.white,
+                    ),
+              ),
+            ),
+          ),
       ],
     ),
   );
-}
+    }
 
 class DNavButton extends StatelessWidget {
   final text;

@@ -49,8 +49,11 @@ class __firstPageIntroState extends State<_firstPageIntro>
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
+               SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
             Center(
               child: DominoReveal(
                 child: CircleAvatar(
@@ -70,7 +73,8 @@ class __firstPageIntroState extends State<_firstPageIntro>
                       ],
                     ),
                   ),
-                  radius: MediaQuery.of(context).size.width / 4,
+                  radius: 100,
+                  // radius: MediaQuery.of(context).size.width / 4,
                   backgroundImage: AssetImage('assets/images/qq.png'),
                 ),
                 //       child: Container(
@@ -100,7 +104,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
                 "Hello, I am",
                 style: (TextStyle(
                   fontFamily: "MeriendaOne",
-                  fontSize: wid * 0.05,
+                  fontSize: 15,
                 )),
               ),
             ),
@@ -111,7 +115,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
               child: Text(
                 "Darsbir Singh",
                 style: (TextStyle(
-                    fontSize: wid * 0.07,
+                    fontSize: 16,
                     fontFamily: "MeriendaOne",
                     fontWeight: FontWeight.bold)),
               ),
@@ -123,7 +127,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
               child: Text(
                 "Android and Flutter Developer",
                 style: (TextStyle(
-                  fontSize: wid * 0.05,
+                  fontSize: 15,
                   fontFamily: "MeriendaOne",
                 )),
               ),
@@ -135,7 +139,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
               child: Text(
                 "Aspiring Data Scientist",
                 style: (TextStyle(
-                  fontSize: wid * 0.05,
+                  fontSize: 15,
                   fontFamily: "MeriendaOne",
                 )),
               ),
@@ -178,7 +182,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
                       child: Text("Resume",
                           style: TextStyle(
                             fontFamily: "MeriendaOne",
-                            fontSize: wid * 0.05,
+                            fontSize: 15,
                             // color: Colors.black
                           ))),
                   // Expanded(flex: 2,child: Container(color: Colors.transparent,),)
@@ -193,7 +197,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
                 children: <Widget>[
                   Text("Connect With Me",
                       style: TextStyle(
-                        fontSize: wid * 0.05,
+                        fontSize: 15,
                         fontFamily: "MeriendaOne",
                       )),
                   SizedBox(
