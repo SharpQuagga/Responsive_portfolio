@@ -34,14 +34,14 @@ class _PrrjectsState extends State<Prrjects> {
             // height: MediaQuery.of(context).size.height,
             // width: MediaQuery.of(context).size.width,
             child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        DominoReveal(
-          child: Text(
-            "Projects",
-            style: TextStyle(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              DominoReveal(
+                child: Text(
+                  "Projects",
+                  style: TextStyle(
                 fontSize: 30,
                 fontFamily: "MeriendaOne",
                 // color: Colors.black,
@@ -88,7 +88,6 @@ class _PrrjectsState extends State<Prrjects> {
                     "Palace Hunt",
                     "An Android App that let's the users book Palaces and Caterers in their city.",
                   ),
-                 
                 ],
               ),
             ),
