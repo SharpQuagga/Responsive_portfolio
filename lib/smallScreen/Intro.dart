@@ -177,7 +177,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
                   GestureDetector(
                       onTap: () {
                         _launchURL(
-                            "https://drive.google.com/file/d/1dMCxQypY6ye74unK8WOkySlcl9VQqTWN/view?usp=sharing");
+                            "https://drive.google.com/open?id=1Cj5XrhtxBieWXA5_AP_MYrn0Y4NeNkSu");
                       },
                       child: Text("Resume",
                           style: TextStyle(
