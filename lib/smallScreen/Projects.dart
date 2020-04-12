@@ -6,7 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 
 _launchURL(url) async {
-  // const url = 'https://flutter.dev';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -63,11 +62,17 @@ class _PrrjectsState extends State<Prrjects> {
                 alignment: WrapAlignment.center,
                 spacing: 10,
                 children: <Widget>[
+                   _smallProject(
+                    context,
+                    "assets/images/python.png",
+                    "Traffic Analysis",
+                    "Flaks API that counts the no of vehicles in the video.",
+                  ),
                   _smallProject(
                     context,
                     "Flutter",
-                    "Punjabi Ekta",
-                    "Promotional App for Political Party",
+                    "No Recognizer",
+                    "Integrated custom TF model to detect the no drawn by the user.",
                   ),
                   _smallProject(
                     context,
@@ -75,12 +80,11 @@ class _PrrjectsState extends State<Prrjects> {
                     "Bizz Code",
                     "An app to help small busnessmen generate BarCode/QRCode and also scan them.",
                   ),
-            
                   _smallProject(
                     context,
-                    "Flutter",
-                    "Estate App",
-                    "An app for real estate brokers",
+                    "assets/images/python.png",
+                    "Movie Recommender",
+                    "Made a content based recommender system from scratch.",
                   ),
                    _smallProject(
                     context,
@@ -153,7 +157,7 @@ Container _smallProject(
                 bdy,
                 softWrap: true,
                 overflow: TextOverflow.fade,
-                style: TextStyle(fontSize: 15,fontFamily: "MeriendaOne",color: Colors.black),
+                style: TextStyle(fontSize: 15,fontWeight: FontWeight.normal, fontFamily: "MeriendaOne",color: Colors.black),
               )),
             ],
           ),

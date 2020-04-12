@@ -143,6 +143,7 @@ Container _dabbeMainDabba(
             overflow: TextOverflow.fade,
             style: TextStyle(
                 // color: Colors.white,
+                fontSize: 20,
                 fontFamily: "MeriendaOne",
                 // fontSize: wid * 0.04,
                 fontWeight: FontWeight.bold),
@@ -161,6 +162,7 @@ Container _dabbeMainDabba(
                 overflow: TextOverflow.fade,
                 // maxLines: 5,
                 style: TextStyle(
+                  fontSize: 15,
                   fontFamily: "MeriendaOne",
                     // fontSize: wid*0.03,
                     // color: Colors.white,

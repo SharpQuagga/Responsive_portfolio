@@ -65,24 +65,24 @@ class ActivityState extends State<Activity> with SingleTickerProviderStateMixin{
                 activeColor: Colors.deepOrange[300],
               ),
               BottomNavyBarItem(
-                icon: Icon(Icons.apps),
+                icon: Icon(Icons.people),
                 title: Text('About'),
-                activeColor: Colors.orange,
+                activeColor: Colors.deepOrange[300],
               ),
               BottomNavyBarItem(
-                  icon: Icon(Icons.people),
+                  icon: Icon(Icons.apps),
                   title: Text('Services'),
-                  activeColor: Colors.blueGrey
+                  activeColor: Colors.deepOrange[300],
               ),
               BottomNavyBarItem(
                   icon: Icon(Icons.message),
                   title: Text('Projects'),
-                  activeColor: Colors.cyan
+                  activeColor: Colors.deepOrange[300],
               ),
               BottomNavyBarItem(
-                  icon: Icon(Icons.settings),
+                  icon: Icon(Icons.account_circle),
                   title: Text('Contact Me'),
-                  activeColor: Colors.blue
+                  activeColor: Colors.deepOrange[300],
               ),
             ],
           ),

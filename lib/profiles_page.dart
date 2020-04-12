@@ -19,14 +19,7 @@ class ProfilePage extends StatelessWidget {
     return ResponsiveWidget(
       largeScreen: Scaffold(
         backgroundColor: Colors.white,
-        appBar: ResponsiveWidget.isSmallScreen(context)
-            ? AppBar(
-                elevation: 0.0,
-                backgroundColor: Colors.white,
-                centerTitle: true,
-                title: _ds(context),
-              )
-            : AppBar(
+        appBar: AppBar(
                 centerTitle: true,
                 title: _ds(context),
                 elevation: 0.0,
@@ -35,47 +28,6 @@ class ProfilePage extends StatelessWidget {
                   _navHeader(context),
                 ],
               ),
-        drawer: ResponsiveWidget.isSmallScreen(context)
-            ? Drawer(
-                child: ListView(
-                  padding: const EdgeInsets.all(20),
-                  children: <Widget>[
-                    NavButton(
-                      text: "About me",
-                      onPressed: () {
-                        controller.animateToPage(1,
-                            curve: Curves.easeIn,
-                            duration: Duration(seconds: 1));
-                      },
-                    ),
-                    NavButton(
-                      text: "Work",
-                      onPressed: () {
-                        controller.animateToPage(2,
-                            curve: Curves.easeIn,
-                            duration: Duration(seconds: 1));
-                      },
-                    ),
-                    NavButton(
-                      text: "Portfolio",
-                      onPressed: () {
-                        controller.animateToPage(3,
-                            curve: Curves.easeIn,
-                            duration: Duration(seconds: 1));
-                      },
-                    ),
-                    NavButton(
-                      text: "Contact",
-                      onPressed: () {
-                        controller.animateToPage(4,
-                            curve: Curves.easeIn,
-                            duration: Duration(seconds: 1));
-                      },
-                    ),
-                  ],
-                ),
-              )
-            : null,
         body: PageView(
           controller: controller,
           scrollDirection: Axis.vertical,
@@ -937,18 +889,18 @@ class _Forth extends StatefulWidget {
 }
 
 class __ForthState extends State<_Forth> {
-  static int _projectcurrentPage = 0;
+  // static int _projectcurrentPage = 0;
 
-  final PageController _projectcontroller = PageController(
-    initialPage: _projectcurrentPage,
-  );
+  // final PageController _projectcontroller = PageController(
+  //   initialPage: _projectcurrentPage,
+  // );
 
   @override
   Widget build(BuildContext context){
     return Prrjects();
   }
 
-
+  // ! It is the old style of the Project
   // @override
   // Widget build(BuildContext context) {
   //   return AnimatedContainer(
@@ -1165,76 +1117,6 @@ class __ForthState extends State<_Forth> {
   //           // )
   //           ));
   // }
-}
-
-class _smallProjectDocs extends StatelessWidget {
-  final String img1, txt1, txt2;
-
-  const _smallProjectDocs({Key key, this.img1, this.txt1, this.txt2});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        DominoReveal(
-          child: Material(
-            shadowColor: Colors.yellow[900],
-            animationDuration: Duration(seconds: 3),
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            elevation: 20,
-            child: Container(
-              height: MediaQuery.of(context).size.height / 2.2,
-              width: MediaQuery.of(context).size.width / 1.4,
-              color: Colors.blue[300],
-              child: Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 50,
-                  ),
-                  RotationTransition(
-                      turns: AlwaysStoppedAnimation(-10 / 360),
-                      child: Material(
-                        animationDuration: Duration(seconds: 3),
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        elevation: 30,
-                        shadowColor: Colors.black87,
-                        child: Container(
-                          width: 160,
-                          height: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage(img1), fit: BoxFit.fill)),
-                        ),
-                      )),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          right: 20,
-          // left: 3/2*MediaQuery.of(context).size.width,
-          top: 30,
-          child: SizedBox(
-                height: MediaQuery.of(context).size.height/4,
-                width: MediaQuery.of(context).size.width/4,
-                child: FittedBox(
-                child: Text(
-                "$txt1\n$txt2",
-                style: TextStyle(
-                  // fontSize: 50,
-                  color: Colors.black,
-                  // fontWeight: FontWeight.bold,
-                  // fontFamily: 'Lato-Regular',
-                ),
-              ),
-            ),
-          ),
-        )
-      ],
-    );
-  }
 }
 
 Container _dabbeMainDabba(
@@ -1494,52 +1376,3 @@ class ProjectDecs extends StatelessWidget {
     );
   }
 }
-
-// class Last extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ResponsiveWidget(
-//       largeScreen: Container(
-//         // width: MediaQuery.of(context).size.width,
-//         // height: MediaQuery.of(context).size.height ,
-//         child: Row(
-//           children: <Widget>[
-//             SizedBox(
-//               width: MediaQuery.of(context).size.width / 4,
-//             ),
-//             Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: <Widget>[
-//                 Text(
-//                   "Darsbir Singh",
-//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-//                 ),
-//                 Text(
-//                   "Adderss",
-//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-//                 ),
-//                 Text(
-//                   "H.No-85, I-Block, Sarabha Nagar, Ludhiana",
-//                   style: TextStyle(fontSize: 10),
-//                 ),
-//                 Text(
-//                   "Contact Info",
-//                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-//                 ),
-//                 Text(
-//                   "+91 8557855866",
-//                   style: TextStyle(fontSize: 10),
-//                 ),
-//                 Text(
-//                   "darsbiritten@gmail.com",
-//                   style: TextStyle(fontSize: 10),
-//                 ),
-//               ],
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
