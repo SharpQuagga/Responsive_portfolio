@@ -87,7 +87,6 @@ class _ServvicesState extends State<Servvices> {
 
 Container _dabbeMainDabba(
     BuildContext context, String head, String bdy, int _size, String img) {
-      var wid = MediaQuery.of(context).size.width;
   return Container(
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
@@ -97,7 +96,7 @@ Container _dabbeMainDabba(
     height: 200,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
-        color: Colors.blueGrey[100],
+        color: Colors.orange[300],
         boxShadow: [
           BoxShadow(
               color: Colors.brown, offset: Offset(10, 10), blurRadius: 10.0)

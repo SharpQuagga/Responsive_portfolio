@@ -66,31 +66,31 @@ class _PrrjectsState extends State<Prrjects> {
                     context,
                     "assets/images/python.png",
                     "Traffic Analysis",
-                    "Flaks API that counts the no of vehicles in the video.",
+                    "Back-end Project on counting moving cars in input video using YOLO.",
                   ),
                   _smallProject(
                     context,
                     "Flutter",
-                    "No Recognizer",
-                    "Integrated custom TF model to detect the no drawn by the user.",
+                    "Punk Beer",
+                    "A fully featured Flutter app integrated with REST API for data fetching.",
                   ),
                   _smallProject(
                     context,
                     "Flutter",
-                    "Bizz Code",
-                    "An app to help small busnessmen generate BarCode/QRCode and also scan them.",
+                    "FlutBot",
+                    "An appointment booking app integrated with DialogFlow and Firebase Database.",
                   ),
                   _smallProject(
                     context,
                     "assets/images/python.png",
-                    "Movie Recommender",
-                    "Made a content based recommender system from scratch.",
+                    "Sentiment Analysis",
+                    "Project on Sentiment Analysis on data fetched from Twitter API",
                   ),
                    _smallProject(
                     context,
-                    "assets/images/android.png",
-                    "Palace Hunt",
-                    "An Android App that let's the users book Palaces and Caterers in their city.",
+                    "assets/images/python.png",
+                    "Stock Price Prediction",
+                    "Project on Google Stock Price Prediction using LSTM model",
                   ),
                 ],
               ),
@@ -117,7 +117,7 @@ Container _smallProject(
     height: 200,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
-        color: Colors.cyan[100],
+        color: Colors.orange[300],
         boxShadow: [
           BoxShadow(
               color: Colors.brown, offset: Offset(10, 10), blurRadius: 10.0)

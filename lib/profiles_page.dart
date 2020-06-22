@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 // import '../../../../../../../flutter/packages/flutter/lib/cupertino.dart';
 import 'responsive_widget.dart';
-import 'dart:html' as html;
+// import 'dart:html' as html;
 // import 'domino_reveal.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'extensions/hover_extensions.dart';
 import 'smallScreen/importts.dart';
 
@@ -233,7 +234,15 @@ class ProfilePage extends StatelessWidget {
         ));
   }
 
-  DominoReveal _mylinks(s_height, s_width) {
+_launchURL(url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    print ('Could not launch $url');
+  }
+}
+
+  DominoReveal _mylinks(s_height, s_width){
     return DominoReveal(
       child: SizedBox(
         width: s_width,
@@ -257,9 +266,11 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                   child: GestureDetector(
                       onTap: () {
-                        html.window.open(
-                            "https://www.facebook.com/Darsbir.Singh",
-                            "Facebook");
+                        const fb = "https://www.facebook.com/Darsbir.Singh";
+                        _launchURL(fb);
+                        // html.window.open(
+                        //     "https://www.facebook.com/Darsbir.Singh",
+                        //     "Facebook");
                       },
                       child: Text(
                         "Facebook",
@@ -269,8 +280,8 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                   child: GestureDetector(
                       onTap: () {
-                        html.window
-                            .open("https://github.com/SharpQuagga", "GitHub");
+                        const fb = "https://github.com/SharpQuagga";
+                        _launchURL(fb);
                       },
                       child: Text(
                         "Github",
@@ -280,9 +291,8 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                   child: GestureDetector(
                       onTap: () {
-                        html.window.open(
-                            "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
-                            "LinkedIn");
+                        const fb = "https://www.linkedin.com/in/darsbir-singh-b58a41127/";
+                        _launchURL(fb);
                       },
                       child: Text("LinkedIn",
                           style:
@@ -291,11 +301,10 @@ class ProfilePage extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                   child: GestureDetector(
                       onTap: () {
-                        html.window.open(
-                            "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
-                            "LinkedIn");
+                        const fb = "https://www.instagram.com/darsbir_singh/";
+                        _launchURL(fb);
                       },
-                      child: Text("Glassdoor",
+                      child: Text("Instagram",
                           style: TextStyle(
                               // fontSize: 17,
                               // fontFamily: 'Lato-Regular',
@@ -366,6 +375,15 @@ class _firstPageIntro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    _launchURL(url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      print ('Could not launch $url');
+    }
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -436,9 +454,11 @@ class _firstPageIntro extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    html.window.open(
-                        "https://drive.google.com/open?id=1Cj5XrhtxBieWXA5_AP_MYrn0Y4NeNkSu",
-                        "resume");
+                    const url = "https://drive.google.com/open?id=1Cj5XrhtxBieWXA5_AP_MYrn0Y4NeNkSu";
+                    _launchURL(url);
+                            // html.window.open(
+                    //     "https://drive.google.com/open?id=1Cj5XrhtxBieWXA5_AP_MYrn0Y4NeNkSu",
+                    //     "resume");
                   },
                   child: Text("Resume",
                       style: TextStyle(
@@ -464,8 +484,10 @@ class _firstPageIntro extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    html.window.open(
-                        "https://www.facebook.com/Darsbir.Singh", "Facebook");
+                    const fb = "https://www.facebook.com/Darsbir.Singh";
+                        _launchURL(fb);
+                    // html.window.open(
+                    //     "https://www.facebook.com/Darsbir.Singh", "Facebook");
                   },
                   child: Image(
                     image: AssetImage("assets/images/facebook.png"),
@@ -476,9 +498,11 @@ class _firstPageIntro extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    html.window.open(
-                        "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
-                        "LinkedIn");
+                    const fb = "https://www.instagram.com/darsbir_singh/";
+                      _launchURL(fb);
+                    // html.window.open(
+                    //     "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
+                    //     "Instagram");
                   },
                   child: Image(
                     image: AssetImage("assets/images/instagram.png"),
@@ -489,9 +513,11 @@ class _firstPageIntro extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    html.window.open(
-                        "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
-                        "LinkedIn");
+                    const fb = "https://www.linkedin.com/in/darsbir-singh-b58a41127/";
+                        _launchURL(fb);
+                    // html.window.open(
+                    //     "https://www.linkedin.com/in/darsbir-singh-b58a41127/",
+                    //     "LinkedIn");
                   },
                   child: Image(
                       image: AssetImage("assets/images/linkedin.png"), width: 25)).showCursorOnHover,
@@ -599,6 +625,16 @@ class _pdetails extends StatelessWidget {
 }
 
 AnimatedContainer _secondPage(BuildContext context) {
+
+  
+_launchURL(url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    print ('Could not launch $url');
+  }
+}
+
   return AnimatedContainer(
     //  height: MediaQuery.of(context).size.height,
     //  width: MediaQuery.of(context).size.width,
@@ -698,7 +734,10 @@ AnimatedContainer _secondPage(BuildContext context) {
                     highlightColor: Colors.amber,
                     hoverColor: Colors.orange[300],
                     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 40),
-                    onPressed: () {},
+                    onPressed: () {
+                      const fb = "https://www.linkedin.com/in/darsbir-singh-b58a41127/";
+                        _launchURL(fb);
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0)),
                     color: Colors.orange[600],
