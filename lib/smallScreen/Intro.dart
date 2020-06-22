@@ -189,10 +189,10 @@ class __firstPageIntroState extends State<_firstPageIntro>
                     },
                     child: Image(
                       image: AssetImage("assets/images/facebook.png"),
-                      width: wid * 0.05,
+                      width: wid * 0.1,
                     )),
                 SizedBox(
-                  width: 8,
+                  width: 10,
                 ),
                 GestureDetector(
                     onTap: () {
@@ -201,10 +201,10 @@ class __firstPageIntroState extends State<_firstPageIntro>
                     },
                     child: Image(
                       image: AssetImage("assets/images/instagram.png"),
-                      width: wid * 0.05,
+                      width: wid * 0.1,
                     )),
                 SizedBox(
-                  width: 8,
+                  width: 10,
                 ),
                 GestureDetector(
                     onTap: () {
@@ -213,7 +213,7 @@ class __firstPageIntroState extends State<_firstPageIntro>
                     },
                     child: Image(
                       image: AssetImage("assets/images/linkedin.png"),
-                      width: wid * 0.05,
+                      width: wid * 0.1,
                     )),
               ],
             ),
